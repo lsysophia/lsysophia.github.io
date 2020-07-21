@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 95%;
+    margin: auto;
 }
 
 .top{
@@ -26,7 +28,75 @@
 }
 
 #garden {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     height: 250px;
     max-width: 1000px;
     background-color: rgb(240, 212, 176);
 }
+
+#watering {
+    background-image: url("images/watering_can.jpeg");
+    background-size: cover;
+    border-radius: 25%;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+/* 
+@keyframes watering_plants{
+    0% {
+
+    }
+
+    50% {
+
+    
+    }
+
+    100% {
+
+    }
+} */
+
+#weeding {
+    background-image: url("images/garden_spade.jpeg");
+    background-size: 55%;
+    border-radius: 25%;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;  
+    background-color: white;
+}
+
+#feeding {
+    background-image: url("images/plant_food.jpeg");
+    background-size: cover;
+    border-radius: 25%;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+#planting {
+    background-image: url("images/planting.jpeg");
+    background-size: 78%;
+    border-radius: 25%;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;  
+    background-color: white;
+}
+
+p {
+  font-size: 12px; 
+  text-align: center;
+}
+
