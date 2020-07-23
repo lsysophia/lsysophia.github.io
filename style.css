@@ -32,7 +32,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    height: 250px;
+    max-height: 1250px;
     max-width: 1000px;
     background-color: rgb(240, 212, 176);
 }
@@ -83,16 +83,46 @@
     text-align: center;
 }
 
-#planting {
-    background-image: url("images/planting.jpeg");
-    background-size: 78%;
+.planting {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+}
+
+#plant1 {
+    background-image: url("images/flower_1.png");
     border-radius: 25%;
-    height: 100px;
-    width: 100px;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-position: center;  
+    height: 50px;
+    width: 50px;
     background-color: white;
+    background-size: contain;
+}
+
+#plant2 {
+    background-image: url("images/flower_2.png");
+    border-radius: 25%;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    background-size: contain;
+}
+
+#plant3 {
+    background-image: url("images/flower_3.png");
+    border-radius: 25%;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    background-size: contain;
+}
+
+#plant4 {
+    background-image: url("images/flower_4.png");
+    border-radius: 25%;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    background-size: contain;
 }
 
 p {
@@ -100,3 +130,12 @@ p {
   text-align: center;
 }
 
+#plant_status {
+    height: 30px;
+    width: 50px; 
+    border: 0.5px solid gray
+}
+
+.grass {
+    height: 25%;
+}
