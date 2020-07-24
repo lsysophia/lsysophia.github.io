@@ -32,17 +32,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    height: 550px;
     max-width: 1000px;
     background-color: rgb(240, 212, 176);
 }
 
 .plants {
-    height: 64px;
-    width: 64px;
-}
-
-.weeds {
     height: 64px;
     width: 64px;
 }
@@ -59,23 +53,7 @@
     height: 100px;
     width: 100px;
     text-align: center;
-    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
-/* 
-@keyframes watering_plants{
-    0% {
-
-    }
-
-    50% {
-
-    
-    }
-
-    100% {
-
-    }
-} */
 
 #weeding {
     background-image: url("images/garden_spade.jpeg");
@@ -158,9 +136,12 @@ p {
   text-align: center;
 }
 
-#plant_status {
-    height: 30px;
-    width: 50px; 
-    border: 0.5px solid gray
+.emptyDiv {
+    height: 64px;
+    width: 64px;
 }
+
+/* @media #garden {
+
+} */
 
