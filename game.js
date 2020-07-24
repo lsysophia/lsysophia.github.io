@@ -1,23 +1,14 @@
-const water = () => {
-
-    allPlants.forEach((plant) => {
-        plant.grow()
-        console.log(plant.plantLife)
-    })
+class Person {
+    constructor() {
+        this.score = 0
+        this.portfolio = {
+            plant1: [],
+            plant2: [],
+            plant3: [],
+            plant4: [],
+        }
+    }
 }
-
-const water_plants = document.getElementById("watering")
-water_plants.addEventListener("click", water)
-
-
-const feed = () => {
-    allPlants.forEach((plant) => {
-        plant.grow()
-        console.log(plant.plantLife)
-    })
-}
-
-document.getElementById("feeding").addEventListener("click", feed)
 
 class Plants {
     constructor (){
@@ -38,10 +29,9 @@ class Plant1 extends Plants {
 
     grow () {
         this.plantLife += 1
-
+        // console.log(this.plantLife)
         if (this.plantLife === 2) {
-            document.getElementById(this.plantId).setAttribute("src", "images/flower_1.png")
-            document.getElementById(this.plantId).style.height = "15%"
+            document.getElementById(this.plantId).setAttribute("src", "images/flower_1.png")            
         }
     }
 }
@@ -54,9 +44,8 @@ class Plant2 extends Plants {
     grow () {
         this.plantLife += 1
 
-        if (this.plantLife === 3) {
+        if (this.plantLife === 5) {
             document.getElementById(this.plantId).setAttribute("src", "images/flower_2.png")
-            document.getElementById(this.plantId).style.height = "15%"
         }
     }
  
@@ -70,9 +59,8 @@ class Plant3 extends Plants {
     grow () {
         this.plantLife += 1
 
-        if (this.plantLife === 2) {
+        if (this.plantLife === 9) {
             document.getElementById(this.plantId).setAttribute("src", "images/flower_3.png")
-            document.getElementById(this.plantId).setAttribute("height", "15%")
         }
     }
  
@@ -86,75 +74,117 @@ class Plant4 extends Plants {
     grow () {
         this.plantLife += 1
 
-        if (this.plantLife === 4) {
+        if (this.plantLife === 15) {
             document.getElementById(this.plantId).setAttribute("src", "images/flower_4.png")
-            document.getElementById(this.plantId).setAttribute("height", "15%")
         }
     }
  
 }
 
 
+const person = new Person()
 const allPlants = []
+let numberOfWeed = 0
 
-// let current_day = true
+const water = () => {
+    allPlants.forEach((plant) => {
+        plant.grow()
+    })
+}
+ 
+const feed = () => {
+    allPlants.forEach((plant) => {
+        plant.grow()
+    })
+}
 
-
-// while (current_day === true)
 
 const plantNew = (event) => {
-    if (allPlants.length === 0 || (allPlants[0] && allPlants[0].plantLife <= 4)) {
         const newPlantId = Math.random()
         let plant = ""
-        if(event.currentTarget.id === "plant1") {
+        if (event.currentTarget.id === "plant1") {
             plant = new Plant1()
-        } else if(event.currentTarget.id === "plant2") {
+            person.portfolio.plant1.push(plant)
+        } 
+        else if (event.currentTarget.id === "plant2") {
             plant = new Plant2()
-        } else if(event.currentTarget.id === "plant3") {
+            person.portfolio.plant2.push(plant)
+        } 
+        else if (event.currentTarget.id === "plant3") {
             plant = new Plant3()
-        } else {
+            person.portfolio.plant3.push(plant)
+        } 
+        else {
             plant = new Plant4()
+            person.portfolio.plant4.push(plant)
         }
         plant.plantId = newPlantId
         allPlants.push(plant)
-        weed_increase()
 
         const newPlant = document.createElement("img")
         newPlant.setAttribute("id", newPlantId)
         newPlant.setAttribute("class", "plants")
         newPlant.setAttribute("src", "images/sprout.png")
-        document.querySelector(".plants").append(newPlant)
+        document.querySelector("#garden").append(newPlant)
+    weedGrowth()
+    activateNewPlant()
+}
+
+const activateNewPlant = () => {
+    person.portfolio.plant1.forEach((plant) => {
+        if (plant.plantLife === 2) {
+            document.getElementById("plant2").removeAttribute("disabled")
+        }
+    })
+    person.portfolio.plant2.forEach((plant) => {
+        if (plant.plantLife === 5) {
+            document.getElementById("plant3").removeAttribute("disabled")
+        }
+    })
+    person.portfolio.plant3.forEach((plant) => {
+        if (plant.plantLife === 9) {
+            document.getElementById("plant4").removeAttribute("disabled")
+        }
+    })
+}
+
+
+
+const weedGrowth = () => {
+    const weeds_img = document.createElement("img")
+    const weeds2_img = document.createElement("img")
+    weeds_img.setAttribute("src", "images/mushroom.png")
+    weeds_img.classList.add("newWeed")
+    weeds2_img.setAttribute("src", "images/grass.png")
+    weeds2_img.classList.add("newWeed")
+    const allWeeds = [weeds_img, weeds2_img]
+    document.querySelector("#garden").append(allWeeds[Math.floor(Math.random() * allWeeds.length)])
+    console.log(numberOfWeed)
+    return numberOfWeed += 1
+}
+
+const weedRemoval = () => {
+    const weed = document.querySelector(".newWeed")
+    if (weed) {
+        weed.remove()
     }
 }
-
-const weed_increase = () => {
-    if (allPlants.length > 0) {
-        const weeds_img = document.createElement("img")
-        weeds_img.setAttribute("src", "images/mushroom.png")
-        weeds_img.classList.add("mushroom")
-        document.querySelector(".weed").append(weeds_img)
-        }
-}
-
-const weeding = () => {
-    // if (weed_count > 0) {
-        const currentWeeds = document.querySelector(".mushroom")
-        document.querySelector(".weed").removeChild(currentWeeds)
-        // Plants.life += 1
-    // }
-}
-
 
 document.getElementById("plant1").addEventListener("click", plantNew)
 document.getElementById("plant2").addEventListener("click", plantNew)
 document.getElementById("plant3").addEventListener("click", plantNew)
 document.getElementById("plant4").addEventListener("click", plantNew)
-document.getElementById("weeding").addEventListener("click", weeding)
+document.getElementById("weeding").addEventListener("click", weedRemoval)
+document.getElementById("watering").addEventListener("click", water)
+document.getElementById("feeding").addEventListener("click", feed)
 
+const weedIncrease = setInterval(() => {
+    weedGrowth()
+    if (numberOfWeed === 4) {
+        clearInterval(weedIncrease)
+    }
+}, 3000)
 
-
-
-// }
 
 // const watering_cans = {
 //     basic: {
@@ -177,5 +207,3 @@ document.getElementById("weeding").addEventListener("click", weeding)
 //         cost: 15,
 //     },
 // }
-
-// const ask_to_plant = prompt ("Would you like to plant something?")

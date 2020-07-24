@@ -32,9 +32,24 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    max-height: 1250px;
+    height: 550px;
     max-width: 1000px;
     background-color: rgb(240, 212, 176);
+}
+
+.plants {
+    height: 64px;
+    width: 64px;
+}
+
+.weeds {
+    height: 64px;
+    width: 64px;
+}
+
+.newWeed {
+    height: 64px;
+    width: 64px;
 }
 
 #watering {
@@ -98,6 +113,7 @@
     background-size: contain;
 }
 
+
 #plant2 {
     background-image: url("images/flower_2.png");
     border-radius: 25%;
@@ -105,6 +121,10 @@
     width: 50px;
     background-color: white;
     background-size: contain;
+}
+
+#plant2:disabled {
+    opacity: 0.2;
 }
 
 #plant3 {
@@ -116,6 +136,10 @@
     background-size: contain;
 }
 
+#plant3:disabled {
+    opacity: 0.2;
+}
+
 #plant4 {
     background-image: url("images/flower_4.png");
     border-radius: 25%;
@@ -123,6 +147,10 @@
     width: 50px;
     background-color: white;
     background-size: contain;
+}
+
+#plant4:disabled {
+    opacity: 0.2;
 }
 
 p {
@@ -136,6 +164,3 @@ p {
     border: 0.5px solid gray
 }
 
-.grass {
-    height: 25%;
-}
