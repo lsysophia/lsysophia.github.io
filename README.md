@@ -13,7 +13,7 @@ HTML, CSS, JavaScript
 > List of the technologies you're using (HTML, CSS, JavaScript)
 
 ### Notes on Game Structure
-
+```Javascript
 const weedIncrease = setInterval(() => {
     weedGrowth()
     const playerScore = person.keepScore(numberOfWeed)
@@ -30,7 +30,7 @@ const weedIncrease = setInterval(() => {
         clearInterval(weedIncrease)
     }
 }, 1000)
-
+```
 The biggest challenge is thinking of a way, a loop to thread the game together, a function that could be used to keep "time". As the game evolve, I have decided to change it from a simple pet plant game where you race against the growing weeds. The setInterval function in this case came in as the main thread that keeps the other functions of growing flowers (i.e. watering, feeding) together. 
 
 > Code samples, description of challenges you overcame, etc.
