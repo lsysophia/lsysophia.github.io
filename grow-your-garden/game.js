@@ -92,7 +92,6 @@ class Plant4 extends Plants {
  
 }
 
-
 const person = new Person()
 const allPlants = []
 let numberOfWeed = 0
@@ -243,3 +242,9 @@ const weedIncrease = setInterval(() => {
         clearInterval(weedIncrease)
     }
 }, 1000)
+
+const gameInstruction = () => {
+    alert ("Click on one of the flower icons to plant a sprout. Use Watering and Feeding to grow them into flowers, they each grow the flower by 1 point. The other flowers will be unlocked one by one as you successfully grow them. Don't forget to weed!")
+}
+
+document.getElementById("instructions").addEventListener("click", gameInstruction)
