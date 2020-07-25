@@ -1,6 +1,6 @@
 # Grow-Your-Garden-game
 
-[screenshot]
+![img](Screenshot.png)
 
 ## What is Grow Your Garden?
 
