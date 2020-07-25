@@ -7,50 +7,52 @@
     <link type = "text/css" rel = "stylesheet" href="style.css" >
 </head>
 <body>
+    <h1 style="text-align: center;">Grow Your Garden</h1>
+
     <div class = "container">
+        <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_GH5nqh.json"  background="#4FA6E4"  speed="0.25"  style="max-width: 1000px; height: 65%; position: absolute; z-index: -1;;"  loop  autoplay></lottie-player>
+        <div class = "mask"></div>
         <div class = "top">
             <div class = "top_left">
-                <h1>Grow Your Garden</h1>
-
                 <div>
-                    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_GuZe5t.json"  background="transparent"  speed="1" style="width: 300px; height: 300px;" autoplay></lottie-player>
+                    <lottie-player id = "sun" src="https://assets4.lottiefiles.com/packages/lf20_GuZe5t.json"  background="transparent"  speed="0.75" style="width: 350px; height: 350px;" loop autoplay></lottie-player>
                 </div>
+
             </div>
 
             <div class = "game_nav">
 
-                <!-- <h3>Nectar:</h3> -->
-
-                <h3>Chores:
+                <div class = "sub_game_nav">
                     <div class = "planting">
-                        <button id = "plant1" ></button>
-                        <button id = "plant2" disabled = "true"></button>
-                        <button id = "plant3" disabled = "true"></button>
-                        <button id = "plant4" disabled = "true"></button>
+                        <div class = "planting_column">
+                            <button id = "plant1" ></button>
+                            <button id = "plant2" disabled = "true"></button>
+                        </div>
+                        <div class = "planting_column">
+                            <button id = "plant3" disabled = "true"></button>
+                            <button id = "plant4" disabled = "true"></button>
+                        </div>
                     </div>
                     <p>Planting</p>
                     <button id = "watering"></button>
                     <p>Watering</p>
+                    <div id = "score"></div>
+                </div>
+                <div class = "sub_game_nav">
                     <button id = "weeding"></button>
                     <p>Weeding</p>
                     <button id = "feeding"></button>
                     <p>Feeding</p>
-                </h3>
+                </div>
 
-                <!-- <h3>Plant Life:
-                    <div id = "plant_status"></div>
-                </h3> -->
+
             </div>
         </div>
 
         <div class = "bottom">
-
-            <div id = "garden">
-                
-
-            </div>
+            <div id = "garden"></div>
         </div>
-    
+
     </div>
     
 </body>
