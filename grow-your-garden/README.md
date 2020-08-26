@@ -6,6 +6,8 @@
 
 It is a game that you have to weed as fast as you could while cultivate your garden plot to contain more flowers than weeds. If the plot has more weeds than flowers, the player lose. 
 
+https://lsysophia.github.io/grow-your-garden/
+
 ## Technical Discussion
 
 HTML, CSS, JavaScript
